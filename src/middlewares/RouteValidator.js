@@ -6,6 +6,7 @@ class RouteValidator {
     return this._validate.bind(schema); // eslint-disable-line
   }
 
+  /* eslint no-underscore-dangle: 0 */
   static _validate(req, res, next) {
     const data = {};
     const schema = this;

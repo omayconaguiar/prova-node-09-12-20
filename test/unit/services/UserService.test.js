@@ -29,6 +29,12 @@ describe('UserService', () => {
       expect(payload).to.be.a('object')
     });
 
+    it('should getAll', async () => {
+      const getAll = await UserService.getAll()
+
+      expect(getAll).to.be.a('array')
+    });
+
     it('should update a user', async () => {
       const update = {
         name: 'maycon',

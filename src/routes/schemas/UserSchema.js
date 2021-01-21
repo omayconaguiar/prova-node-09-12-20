@@ -1,6 +1,5 @@
 const Joi = require('joi');
 const RouteValidator = require('../../middlewares/RouteValidator');
-// const Schemas = require('../../helpers/Schemas');
 
 class StatementSchema extends RouteValidator {
   static get createUser() {
@@ -8,7 +7,7 @@ class StatementSchema extends RouteValidator {
       body: Joi.object().keys({
         name: Joi.string().required(),
         username: Joi.string().required(),
-        email: Joi.string().required()
+        email: Joi.string().required(),
       }),
     };
 
@@ -23,7 +22,7 @@ class StatementSchema extends RouteValidator {
       body: Joi.object().keys({
         name: Joi.string(),
         username: Joi.string(),
-        email: Joi.string()
+        email: Joi.string(),
       }),
     };
 

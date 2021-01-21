@@ -1,6 +1,5 @@
 const UserModel = require('../models/UserModel');
-const knex = require('../config/db');
-const {notNullObjects} = require('../helpers/User');
+const { notNullObjects } = require('../helpers/User');
 
 class UserService {
   static create({ create }) {
@@ -8,38 +7,37 @@ class UserService {
       ...create,
     };
 
-    const id = UserModel.create(insert)
+    const id = UserModel.create(insert);
 
     return id;
   }
 
   static getAll() {
-      return UserModel.getAll();
+    return UserModel.getAll();
   }
 
   static update({ update, referenceId }) {
-      const updating = {
-        name: update.name,
-        email: update.email,
-        username: update.username,
-        id: referenceId
-      };
+    const updating = {
+      name: update.name,
+      email: update.email,
+      username: update.username,
+      id: referenceId,
+    };
 
-      const id = UserModel.update(notNullObjects(updating));
+    const id = UserModel.update(notNullObjects(updating));
 
-      return id;
+    return id;
   }
 
   static delete({ delet }) {
     const deleting = {
-      id: delet.id
+      id: delet.id,
     };
 
     const id = UserModel.delete(deleting);
 
     return id;
   }
-
 }
 
 module.exports = UserService;

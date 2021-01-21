@@ -1,12 +1,9 @@
 const notNullObjects = (obj) => {
-  for (var propName in obj) {
-    if (obj[propName] === null || obj[propName] === undefined) {
-      delete obj[propName];
-    }
-  }
-  return obj
+  /* eslint no-param-reassign: "error" */
+  Object.keys(obj).forEach((key) => (obj[key] === null ? delete obj[key] : {}));
+  return obj;
 };
 
 module.exports = {
-  notNullObjects
+  notNullObjects,
 };

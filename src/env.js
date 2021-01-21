@@ -4,7 +4,7 @@ require('dotenv').config();
 const { name, version } = require('../package.json');
 
 const env = {
-  NODE_ENV: process.env.NODE_ENV || 'production',
+  NODE_ENV: process.env.NODE_ENV || 'localhost',
   SERVICEPORT: parseInt(process.env.SERVICEPORT || '3000', 10),
   ROUTE: process.env.ROUTE || '/',
   NAME: name,

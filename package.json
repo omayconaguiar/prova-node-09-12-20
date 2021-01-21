@@ -9,6 +9,7 @@
     "test:unit": "mocha --opts test/unit/mocha.opts 'test/unit/**/*.test.js' --check-leaks --exit",
     "lint": "eslint src",
     "test:cover": "nyc --reporter=html --reporter=text npm run test",
+    "seed": "knex seed:run",
     "migrate:latest": "knex migrate:latest --env=development",
     "migrate:rollback": "knex migrate:rollback --env=development",
     "migrate:up": "knex migrate:latest --env=production"
@@ -17,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/omayconaguiar/prova-node-09-12-20"
   },
-  "author": "PHI",
+  "author": "Maycon Aguiar Teixeira da Silva",
   "license": "MIT",
   "dependencies": {
     "@somosphi/logger": "^1.4.5",
@@ -35,13 +36,9 @@
     "joi": "^14.3.1",
     "knex": "^0.20.13",
     "lodash": "^4.17.19",
-    "moment-timezone": "^0.5.32",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.7",
-    "npm": "^6.14.7",
-    "numeral": "^2.0.6",
-    "table": "^5.4.6",
-    "uuid": "^7.0.3"
+    "npm": "^6.14.7"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

@@ -22,7 +22,7 @@ class UserModel {
     return knex
       .from('user')
       .where('id', data.id)
-      .del()
+      .del();
   }
 }
 

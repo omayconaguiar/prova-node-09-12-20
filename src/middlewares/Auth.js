@@ -18,20 +18,20 @@ class Auth {
 
       try {
         const key = await knex.first('id', 'trusted', 'type')
-          .from('apikey')
+          .from('api_key')
           .where({
-            status: YES,
+            status: 'YES',
             token,
           });
 
         if (key) {
           req.apikey = {
             id: key.id,
-            trusted: key.trusted === YES,
+            trusted: key.trusted === 'YES',
             type: key.type,
           };
 
-          if (trusted && key.trusted === NO) {
+          if (trusted && key.trusted === 'NO') {
             res.status(403).json({ success: false, message: 'Chave de autenticação inválida.' });
             return;
           }

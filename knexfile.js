@@ -3,11 +3,11 @@ const env = require('./src/env');
 const configDefault = {
   client: 'mysql2',
   connection: {
-    host: env.DB_HOST,
-    port: env.DB_PORT,
-    user: env.DB_USERNAME,
-    password: env.DB_PASSWORD,
-    database: env.DB_DATABASE,
+    host: env.DB_HOST || 'localhost',
+    port: env.DB_PORT || '3306',
+    user: env.DB_USERNAME || 'root',
+    password: env.DB_PASSWORD || '12345',
+    database: env.DB_DATABASE || 'helper',
     supportBigNumbers: true,
     bigNumberStrings: true,
     multipleStatements: true,
