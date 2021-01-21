@@ -4,9 +4,60 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "test": "npm run test:unit",
+    "test:unit": "mocha --opts test/unit/mocha.opts 'test/unit/**/*.test.js' --check-leaks --exit",
+    "lint": "eslint src",
+    "test:cover": "nyc --reporter=html --reporter=text npm run test",
+    "migrate:latest": "knex migrate:latest --env=development",
+    "migrate:rollback": "knex migrate:rollback --env=development",
+    "migrate:up": "knex migrate:latest --env=production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omayconaguiar/prova-node-09-12-20"
+  },
+  "author": "PHI",
+  "license": "MIT",
+  "dependencies": {
+    "@somosphi/logger": "^1.4.5",
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "enum": "^2.5.0",
+    "express": "^4.17.1",
+    "global": "^4.4.0",
+    "helmet": "^3.22.0",
+    "install": "^0.13.0",
+    "joi": "^14.3.1",
+    "knex": "^0.20.13",
+    "lodash": "^4.17.19",
+    "moment-timezone": "^0.5.32",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.7",
+    "npm": "^6.14.7",
+    "numeral": "^2.0.6",
+    "table": "^5.4.6",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "glob": "^7.1.6",
+    "mocha": "^7.2.0",
+    "nock": "^12.0.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.1",
+    "sqlite3": "^4.2.0",
+    "supertest": "^4.0.2"
+  }
 }

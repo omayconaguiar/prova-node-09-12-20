@@ -1,27 +1,31 @@
-# Prova de Backend
+# ProvaNode API application
 
-O projeto inicial é um cadastro de usuários em memória muito simples e sem utilizar nenhuma lib. Apesar de o código estar em qualidade baixa, o projeto está funcional. O que se espera é que o candidato melhore este código de uma maneira que possamos avaliar suas habilidades e competências.
+## Setup Para rodar local
 
-### Rodando o projeto
+```js
+yarn install
+```
 
-`node src/index.js`
+### Migrations
 
-## O que será avaliado?
+```js
+yarn migrate:latest
+```
 
-A idéia é deixar o candidato bem livre pra reimplementar o código da maneira que mais lhe for conveniente e que mais demonstre suas habilidades. Está liberado o uso de libs de terceiros, bancos de dados, autenticação, etc.
+### Run 
 
-1. Qualidade de código
-2. Uso de patterns adequados
-3. Estratégia de validação de dados
-4. Testes unitários
+```js
+yarn dev
+```
 
-## O que é desejado (não obrigatório) na entrega?
+### Test
 
-1. Adição de Banco de dados
-2. Utilização de docker
-3. Autenticação
-4. Utilização de typescript
+```js
+yarn test
+```
 
-## Como será feita a entrega?
+### Lint
 
-Deverá ser realizado um fork deste repositório e no formulário enviado você deverá responder com o link deste fork.
+```js
+yarn lint
+```
